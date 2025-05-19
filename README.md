@@ -1,64 +1,28 @@
-# Frontend - React + TypeScript + Vite
+# Frontend - Assistente Inteligente de Emergências Médicas
 
-Este projeto é uma aplicação frontend desenvolvida com React, TypeScript e Vite, utilizando ESLint para padronização de código, testes com Vitest e documentação de componentes com Storybook.
+Este repositório contém o frontend do Assistente Inteligente de Emergências Médicas, desenvolvido com **React**, **TypeScript**, **Vite**, **Storybook** e **Material UI**.
 
-## 🚀 Tecnologias Utilizadas
+## 📁 Estrutura do Projeto
 
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
-- [ESLint](https://eslint.org/)
-- [Vitest](https://vitest.dev/)
-- [Storybook](https://storybook.js.org/)
+- `src/components/`: Componentes principais da aplicação.
+- `src/components/pages/AskAssistantPage.tsx`: Página onde o usuário interage com o assistente.
+- `src/stories/`: Componentes e estilos usados para Storybook.
 
-## 📦 Instalação
+## ✨ Funcionalidades
 
-1. Clone o repositório:
+- Envio de perguntas para um backend (quando disponível) e exibição da resposta.
+- Simulação de respostas quando executado via **Storybook**.
+- Utilização de **Material UI** para layout e design.
+- Integração com Storybook para visualização isolada de componentes.
 
-   ```bash
-   git clone https://github.com/leotmartinez/frontend.git
-   cd frontend
-   ```
+## 🚀 Tecnologias
 
-2. Instale as dependências:
+- **React + Vite**
+- **TypeScript**
+- **Material UI**
+- **Storybook**
+- **ESLint + Prettier**
 
-   ```bash
-   npm install
-   ```
-
-## 🧪 Rodando os Testes
-
-Execute os testes com:
-
-```bash
-npm run test
-```
-
-## 📖 Storybook
-
-Para visualizar os componentes isoladamente com o Storybook:
-
-```bash
-npm run storybook
-```
-
-## ⚙️ Scripts Disponíveis
-
-- `npm run dev`: Inicia o servidor de desenvolvimento.
-- `npm run build`: Gera a build de produção.
-- `npm run lint`: Executa o linter.
-- `npm run test`: Executa os testes com Vitest.
-- `npm run storybook`: Inicia o Storybook.
-- `npm run build-storybook`: Gera a build do Storybook.
-
-## 📂 Estrutura de Pastas
-
-- `src/`: Código-fonte da aplicação.
-- `.storybook/`: Configuração do Storybook.
-- `public/`: Arquivos estáticos.
-- `vite.config.ts`: Configuração do Vite.
-- `vitest.workspace.ts`: Configuração do Vitest.
-- `tsconfig.*.json`: Arquivos de configuração do TypeScript.
 
 ## 📄 Licença
 
