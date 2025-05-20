@@ -30,6 +30,11 @@ const meta: Meta<typeof IconButtonAtom> = {
     label: {
       control: 'text',
     },
+    iconColor: {
+      control: { type: 'radio' },
+      options: ['#FFFFFF', '#A5D2E3'],
+      description: 'Cor do ícone',
+    },
   },
 };
 export default meta;

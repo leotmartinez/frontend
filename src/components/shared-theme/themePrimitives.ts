@@ -1,12 +1,15 @@
+// Importa funções e tipos do Material UI para criação e tipagem do tema
 import { createTheme, alpha } from '@mui/material/styles';
 import type { PaletteMode, Shadows } from '@mui/material/styles';
 
+// Extende as definições do Material UI para permitir variantes customizadas
 declare module '@mui/material/Paper' {
   interface PaperPropsVariantOverrides {
     highlighted: true;
   }
 }
 declare module '@mui/material/styles' {
+  // Define uma interface para faixas de cor (ColorRange)
   interface ColorRange {
     50: string;
     100: string;
@@ -20,17 +23,22 @@ declare module '@mui/material/styles' {
     900: string;
   }
 
+  // Permite que PaletteColor use ColorRange
   interface PaletteColor extends ColorRange {}
 
+  // Adiciona baseShadow à interface Palette
   interface Palette {
     baseShadow: string;
   }
 }
 
+// Cria um tema padrão para usar funções utilitárias do Material UI
 const defaultTheme = createTheme();
 
+// Cria uma cópia dos shadows padrão do tema
 const customShadows: Shadows = [...defaultTheme.shadows];
 
+// Define as paletas de cores principais do projeto
 export const brand = {
   50: 'hsl(210, 100%, 95%)',
   100: 'hsl(210, 100%, 92%)',
@@ -96,7 +104,9 @@ export const red = {
   900: 'hsl(0, 93%, 6%)',
 };
 
+// Função utilitária para gerar tokens de design baseados no modo (claro/escuro)
 export const getDesignTokens = (mode: PaletteMode) => {
+  // Ajusta a sombra principal conforme o modo
   customShadows[1] =
     mode === 'dark'
       ? 'hsla(220, 30%, 5%, 0.7) 0px 4px 16px 0px, hsla(220, 25%, 10%, 0.8) 0px 8px 16px -5px'
@@ -104,7 +114,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
 
   return {
     palette: {
-      mode,
+      mode, // claro ou escuro
       primary: {
         light: brand[200],
         main: brand[400],
@@ -183,6 +193,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
         }),
       },
     },
+    // Tipografia customizada do projeto
     typography: {
       fontFamily: 'Inter, sans-serif',
       h1: {
@@ -232,13 +243,16 @@ export const getDesignTokens = (mode: PaletteMode) => {
         fontWeight: 400,
       },
     },
+    // Raio de borda padrão
     shape: {
       borderRadius: 8,
     },
+    // Sombreamentos customizados
     shadows: customShadows,
   };
 };
 
+// Define os esquemas de cor para light e dark mode
 export const colorSchemes = {
   light: {
     palette: {
@@ -341,6 +355,7 @@ export const colorSchemes = {
   },
 };
 
+// Tipografia padrão exportada separadamente
 export const typography = {
   fontFamily: 'Inter, sans-serif',
   h1: {
@@ -391,10 +406,12 @@ export const typography = {
   },
 };
 
+// Raio de borda padrão exportado separadamente
 export const shape = {
   borderRadius: 8,
 };
 
+// Sombreamentos padrão exportados separadamente
 // @ts-ignore
 const defaultShadows: Shadows = [
   'none',
