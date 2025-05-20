@@ -24,11 +24,21 @@ declare module '@mui/material/styles' {
   }
 
   // Permite que PaletteColor use ColorRange
-  interface PaletteColor extends ColorRange {}
+  interface PaletteColor extends ColorRange {
+    accentMain?: string; // cor de destaque principal (genérica)
+    accentAlt?: string;  // cor de destaque alternativa (genérica)
+  }
 
   // Adiciona baseShadow à interface Palette
   interface Palette {
     baseShadow: string;
+    tertiary: PaletteColor;
+    textColor: PaletteColor;
+  }
+
+  interface PaletteOptions {
+    tertiary?: PaletteColor;
+    textColor?: PaletteColor;
   }
 }
 
@@ -104,6 +114,62 @@ export const red = {
   900: 'hsl(0, 93%, 6%)',
 };
 
+// Nova paleta primary: tons de branco em HSL
+export const primary = {
+  50:  'hsl(0, 0%, 100%)',
+  100: 'hsl(0, 0%, 98%)',
+  200: 'hsl(0, 0%, 96%)',
+  300: 'hsl(0, 0%, 94%)',
+  400: 'hsl(0, 0%, 93%)',
+  500: 'hsl(0, 0%, 88%)',
+  600: 'hsl(0, 0%, 81%)',
+  700: 'hsl(0, 0%, 74%)',
+  800: 'hsl(0, 0%, 69%)',
+  900: 'hsl(0, 0%, 62%)',
+};
+
+// Nova paleta secondary: tons de azul claro em HSL (#A5D2E3)
+export const secondary = {
+  50:  'hsl(195, 60%, 95%)',
+  100: 'hsl(195, 60%, 90%)',
+  200: 'hsl(195, 56%, 77%)', // #A5D2E3
+  300: 'hsl(195, 54%, 70%)',
+  400: 'hsl(195, 52%, 62%)',
+  500: 'hsl(195, 50%, 54%)',
+  600: 'hsl(195, 60%, 44%)',
+  700: 'hsl(195, 60%, 34%)',
+  800: 'hsl(195, 60%, 24%)',
+  900: 'hsl(195, 60%, 14%)',
+};
+
+// Nova paleta tertiary: tons de azul forte em HSL (#0571D3)
+export const tertiary = {
+  50:  'hsl(207, 80%, 95%)',
+  100: 'hsl(207, 80%, 85%)',
+  200: 'hsl(207, 80%, 75%)',
+  300: 'hsl(207, 80%, 65%)',
+  400: 'hsl(207, 80%, 55%)',
+  500: 'hsl(207, 95%, 43%)', // #0571D3
+  600: 'hsl(207, 95%, 35%)',
+  700: 'hsl(207, 95%, 27%)',
+  800: 'hsl(207, 95%, 19%)',
+  900: 'hsl(207, 95%, 11%)',
+};
+
+// Nova paleta para texto: tons de cinza azulado em HSL (#5E6572)
+export const textColor = {
+  50:  'hsl(220, 10%, 97%)',
+  100: 'hsl(220, 10%, 92%)',
+  200: 'hsl(220, 10%, 85%)',
+  300: 'hsl(220, 10%, 78%)',
+  400: 'hsl(220, 10%, 70%)',
+  500: 'hsl(220, 10%, 60%)',
+  600: 'hsl(220, 10%, 50%)',
+  700: 'hsl(220, 10%, 40%)',
+  800: 'hsl(220, 12%, 41%)', // #5E6572
+  900: 'hsl(220, 12%, 30%)',
+};
+
 // Função utilitária para gerar tokens de design baseados no modo (claro/escuro)
 export const getDesignTokens = (mode: PaletteMode) => {
   // Ajusta a sombra principal conforme o modo
@@ -116,17 +182,49 @@ export const getDesignTokens = (mode: PaletteMode) => {
     palette: {
       mode, // claro ou escuro
       primary: {
-        light: brand[200],
+        light: primary[200],
+        main: primary[500],
+        dark: primary[700],
+        contrastText: textColor[800],
+        ...primary,
+      },
+      secondary: {
+        light: secondary[200],
+        main: secondary[500],
+        dark: secondary[700],
+        contrastText: textColor[800],
+        ...secondary,
+      },
+      tertiary: {
+        light: tertiary[200],
+        main: tertiary[500],
+        dark: tertiary[700],
+        contrastText: primary[50],
+        ...tertiary,
+      },
+      textColor: {
+        light: textColor[200],
+        main: textColor[800],
+        dark: textColor[900],
+        contrastText: primary[50],
+        ...textColor,
+      },
+      text: {
+        primary: textColor[800],
+        secondary: textColor[600],
+        disabled: textColor[400],
+      },
+      // Cores genéricas para destaque/acento
+      accentMain: '#FFFFFF',
+      accentAlt:  '#A5D2E3',
+      ...(mode === 'dark' && {
+        contrastText: brand[50],
+        light: brand[300],
         main: brand[400],
         dark: brand[700],
-        contrastText: brand[50],
-        ...(mode === 'dark' && {
-          contrastText: brand[50],
-          light: brand[300],
-          main: brand[400],
-          dark: brand[700],
-        }),
-      },
+        accentMain: '#FFFFFF',
+        accentAlt:  '#A5D2E3',
+      }),
       info: {
         light: brand[100],
         main: brand[300],
@@ -177,12 +275,6 @@ export const getDesignTokens = (mode: PaletteMode) => {
         default: 'hsl(0, 0%, 99%)',
         paper: 'hsl(220, 35%, 97%)',
         ...(mode === 'dark' && { default: gray[900], paper: 'hsl(220, 30%, 7%)' }),
-      },
-      text: {
-        primary: gray[800],
-        secondary: gray[600],
-        warning: orange[400],
-        ...(mode === 'dark' && { primary: 'hsl(0, 0%, 100%)', secondary: gray[400] }),
       },
       action: {
         hover: alpha(gray[200], 0.2),
@@ -257,32 +349,40 @@ export const colorSchemes = {
   light: {
     palette: {
       primary: {
-        light: brand[200],
-        main: brand[400],
-        dark: brand[700],
-        contrastText: brand[50],
+        light: primary[200],
+        main: primary[500],
+        dark: primary[700],
+        contrastText: textColor[800],
+        ...primary,
       },
-      info: {
-        light: brand[100],
-        main: brand[300],
-        dark: brand[600],
-        contrastText: gray[50],
+      secondary: {
+        light: secondary[200],
+        main: secondary[500],
+        dark: secondary[700],
+        contrastText: textColor[800],
+        ...secondary,
       },
-      warning: {
-        light: orange[300],
-        main: orange[400],
-        dark: orange[800],
+      tertiary: {
+        light: tertiary[200],
+        main: tertiary[500],
+        dark: tertiary[700],
+        contrastText: primary[50],
+        ...tertiary,
       },
-      error: {
-        light: red[300],
-        main: red[400],
-        dark: red[800],
+      textColor: {
+        light: textColor[200],
+        main: textColor[800],
+        dark: textColor[900],
+        contrastText: primary[50],
+        ...textColor,
       },
-      success: {
-        light: green[300],
-        main: green[400],
-        dark: green[800],
+      text: {
+        primary: textColor[800],
+        secondary: textColor[600],
+        disabled: textColor[400],
       },
+      // ...mantenha outras cores se necessário...
+      // grey, error, warning, success, background, divider, etc.
       grey: {
         ...gray,
       },
@@ -290,11 +390,6 @@ export const colorSchemes = {
       background: {
         default: 'hsl(0, 0%, 99%)',
         paper: 'hsl(220, 35%, 97%)',
-      },
-      text: {
-        primary: gray[800],
-        secondary: gray[600],
-        warning: orange[400],
       },
       action: {
         hover: alpha(gray[200], 0.2),
@@ -307,32 +402,39 @@ export const colorSchemes = {
   dark: {
     palette: {
       primary: {
-        contrastText: brand[50],
-        light: brand[300],
-        main: brand[400],
-        dark: brand[700],
+        light: primary[200],
+        main: primary[500],
+        dark: primary[700],
+        contrastText: textColor[800],
+        ...primary,
       },
-      info: {
-        contrastText: brand[300],
-        light: brand[500],
-        main: brand[700],
-        dark: brand[900],
+      secondary: {
+        light: secondary[200],
+        main: secondary[500],
+        dark: secondary[700],
+        contrastText: textColor[800],
+        ...secondary,
       },
-      warning: {
-        light: orange[400],
-        main: orange[500],
-        dark: orange[700],
+      tertiary: {
+        light: tertiary[200],
+        main: tertiary[500],
+        dark: tertiary[700],
+        contrastText: primary[50],
+        ...tertiary,
       },
-      error: {
-        light: red[400],
-        main: red[500],
-        dark: red[700],
+      textColor: {
+        light: textColor[200],
+        main: textColor[800],
+        dark: textColor[900],
+        contrastText: primary[50],
+        ...textColor,
       },
-      success: {
-        light: green[400],
-        main: green[500],
-        dark: green[700],
+      text: {
+        primary: textColor[800],
+        secondary: textColor[600],
+        disabled: textColor[400],
       },
+      // ...mantenha outras cores se necessário...
       grey: {
         ...gray,
       },
@@ -340,10 +442,6 @@ export const colorSchemes = {
       background: {
         default: gray[900],
         paper: 'hsl(220, 30%, 7%)',
-      },
-      text: {
-        primary: 'hsl(0, 0%, 100%)',
-        secondary: gray[400],
       },
       action: {
         hover: alpha(gray[600], 0.2),
