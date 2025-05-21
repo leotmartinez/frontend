@@ -11,9 +11,9 @@ import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 
 const mainListItems = [
   { text: 'Home', icon: <HomeRoundedIcon /> },
-  { text: 'Conversa 1'},
-  { text: 'Conversa 2'},
-  { text: 'Conversa 3'},
+  { text: 'Chat 1'},
+  { text: 'Chat 2'},
+  { text: 'Chat 3'},
 ];
 
 const secondaryListItems = [
