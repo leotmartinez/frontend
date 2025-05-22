@@ -1,4 +1,4 @@
-// src/components/pages/Dashboard.tsx
+// src/components/pages/AssistantLayout.tsx
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import AppNavbar from './components/AppNavbar';
@@ -6,7 +6,7 @@ import SideMenu from './components/SideMenu';
 import AppTheme from '../../shared-theme/AppTheme';
 import { AskAssistantPage } from '../AskAssistantPage'; // Importando a página principal
 
-export default function Dashboard(props: { disableCustomTheme?: boolean }) {
+export default function AssistantLayout(props: { disableCustomTheme?: boolean }) {
   return (
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
