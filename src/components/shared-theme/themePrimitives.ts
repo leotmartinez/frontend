@@ -129,7 +129,7 @@ export const primary = {
 };
 
 // Nova paleta secondary: tons de azul claro em HSL (#A5D2E3)
-export const secondary = {
+export const softBlue = {
   50:  'hsl(195, 60%, 95%)',
   100: 'hsl(195, 60%, 90%)',
   200: 'hsl(195, 56%, 77%)', // #A5D2E3
@@ -143,7 +143,7 @@ export const secondary = {
 };
 
 // Nova paleta tertiary: tons de azul forte em HSL (#0571D3)
-export const tertiary = {
+export const darkBlue = {
   50:  'hsl(207, 80%, 95%)',
   100: 'hsl(207, 80%, 85%)',
   200: 'hsl(207, 80%, 75%)',
@@ -188,19 +188,19 @@ export const getDesignTokens = (mode: PaletteMode) => {
         contrastText: textColor[800],
         ...primary,
       },
-      secondary: {
-        light: secondary[200],
-        main: secondary[500],
-        dark: secondary[700],
+      softBlue: {
+        light: softBlue[200],
+        main: softBlue[500],
+        dark: softBlue[700],
         contrastText: textColor[800],
-        ...secondary,
+        ...softBlue,
       },
-      tertiary: {
-        light: tertiary[200],
-        main: tertiary[500],
-        dark: tertiary[700],
+      darkBlue: {
+        light: darkBlue[200],
+        main: darkBlue[500],
+        dark: darkBlue[700],
         contrastText: primary[50],
-        ...tertiary,
+        ...darkBlue,
       },
       textColor: {
         light: textColor[200],
@@ -355,19 +355,19 @@ export const colorSchemes = {
         contrastText: textColor[800],
         ...primary,
       },
-      secondary: {
-        light: secondary[200],
-        main: secondary[500],
-        dark: secondary[700],
+      softBlue: {
+        light: softBlue[200],
+        main: softBlue[500],
+        dark: softBlue[700],
         contrastText: textColor[800],
-        ...secondary,
+        ...softBlue,
       },
-      tertiary: {
-        light: tertiary[200],
-        main: tertiary[500],
-        dark: tertiary[700],
+      darkBlue: {
+        light: darkBlue[200],
+        main: darkBlue[500],
+        dark: darkBlue[700],
         contrastText: primary[50],
-        ...tertiary,
+        ...darkBlue,
       },
       textColor: {
         light: textColor[200],
@@ -408,19 +408,19 @@ export const colorSchemes = {
         contrastText: textColor[800],
         ...primary,
       },
-      secondary: {
-        light: secondary[200],
-        main: secondary[500],
-        dark: secondary[700],
+      softBlue: {
+        light: softBlue[200],
+        main: softBlue[500],
+        dark: softBlue[700],
         contrastText: textColor[800],
-        ...secondary,
+        ...softBlue,
       },
-      tertiary: {
-        light: tertiary[200],
-        main: tertiary[500],
-        dark: tertiary[700],
+      darkBlue: {
+        light: darkBlue[200],
+        main: darkBlue[500],
+        dark: darkBlue[700],
         contrastText: primary[50],
-        ...tertiary,
+        ...darkBlue,
       },
       textColor: {
         light: textColor[200],

@@ -16,7 +16,7 @@ const meta: Meta<typeof IconButtonAtom> = {
     type: 'button',
   },
   argTypes: {
-    color: {
+    color: {//aceita só valores predefinidos do MUI
       control: { type: 'select' },
       options: ['primary', 'secondary', 'error', 'info', 'success', 'warning', 'inherit'],
     },
@@ -30,9 +30,9 @@ const meta: Meta<typeof IconButtonAtom> = {
     label: {
       control: 'text',
     },
-    iconColor: {
-      control: { type: 'radio' },
-      options: ['#FFFFFF', '#A5D2E3'],
+    iconColor: {//aceita valores hexadecimais, rgb, hsl ou nomes de cores do MUI que estão no tema 
+      control: { type: 'select' },
+      options: ['primary.50', 'softBlue.200', 'darkBlue.500'],
       description: 'Cor do ícone',
     },
   },
@@ -44,6 +44,7 @@ export const Add: Story = {
   args: {
     icon: <AddOutlined />,
     label: 'Adicionar',
+    iconColor: 'darkBlue.500',
   },
 };
 
@@ -51,6 +52,7 @@ export const Delete: Story = {
     args: {
         icon: <DeleteOutlineOutlined />,
         label: 'Deletar',
+        iconColor: 'primary.50',
     },
 }
 
