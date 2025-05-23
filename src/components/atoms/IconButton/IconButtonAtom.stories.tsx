@@ -1,60 +1,81 @@
+// Importa os tipos necessários do Storybook
 import type { Meta } from '@storybook/react';
 import type { StoryObj } from '@storybook/react';
+// Importa o componente a ser documentado/testado
 import IconButtonAtom from './IconButtonAtom';
-import { AddOutlined, ModeEditOutlineOutlined, ShortTextOutlined, ThumbUpOutlined, ThumbDownOutlined,DeleteOutlineOutlined } from '@mui/icons-material';
+// Importa ícones do Material UI para usar nos exemplos
+import { 
+  AddOutlined, 
+  ModeEditOutlineOutlined, 
+  ShortTextOutlined, 
+  ThumbUpOutlined, 
+  ThumbDownOutlined, 
+  DeleteOutlineOutlined 
+} from '@mui/icons-material';
 
+// Define as configurações principais do Storybook para o componente
 const meta: Meta<typeof IconButtonAtom> = {
-  title: 'Components/Atoms/IconButton',
-  component: IconButtonAtom,
-  tags: ['autodocs'],
+  title: 'Components/Atoms/IconButton', // Caminho do componente na árvore do Storybook
+  component: IconButtonAtom,            // Componente a ser exibido
+  tags: ['autodocs'],                   // Tags para documentação automática
   args: {
-    icon: <AddOutlined />,
-    label: 'Adicionar',
-    color: 'primary',
-    size: 'medium',
-    disabled: false,
-    type: 'button',
+    icon: <AddOutlined />,               // Ícone padrão
+    label: 'Adicionar',                  // Label padrão
+    color: 'primary',                    // Cor do botão padrão
+    size: 'medium',                      // Tamanho padrão
+    disabled: false,                     // Habilitado por padrão
+    type: 'button',                      // Tipo HTML padrão
+    iconColor: 'common.white',           // Cor padrão do ícone
   },
   argTypes: {
-    color: {//aceita só valores predefinidos do MUI
-      control: { type: 'select' },
+    color: {
+      control: { type: 'select' },       // Controlador do Storybook (dropdown)
       options: ['primary', 'secondary', 'error', 'info', 'success', 'warning', 'inherit'],
+      description: 'Cor do botão conforme as opções predefinidas do MUI.',
     },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
+      description: 'Tamanho do botão.',
     },
     disabled: {
       control: 'boolean',
+      description: 'Desativa o botão se verdadeiro.',
     },
     label: {
       control: 'text',
+      description: 'Texto descritivo do botão (importante para acessibilidade).',
     },
-    iconColor: {//aceita valores hexadecimais, rgb, hsl ou nomes de cores do MUI que estão no tema 
+    iconColor: {
+      control: { type: 'select' },  // Controlador para selecionar cor do ícone
+      options: ['primary.50', 'softBlue.200', 'darkBlue.500', 'common.white'], // Apenas cores permitidas
+      description: 'Cor do ícone. Aceita valores específicos do tema.',
+    },
+    type: {
       control: { type: 'select' },
-      options: ['primary.50', 'softBlue.200', 'darkBlue.500'],
-      description: 'Cor do ícone',
+      options: ['button', 'submit', 'reset'],
+      description: 'Tipo do botão HTML.',
     },
   },
 };
+
 export default meta;
 type Story = StoryObj<typeof IconButtonAtom>;
 
+// Exemplos de uso do componente com diferentes ícones e labels
 export const Add: Story = {
   args: {
     icon: <AddOutlined />,
     label: 'Adicionar',
-    iconColor: 'darkBlue.500',
   },
 };
 
 export const Delete: Story = {
-    args: {
-        icon: <DeleteOutlineOutlined />,
-        label: 'Deletar',
-        iconColor: 'primary.50',
-    },
-}
+  args: {
+    icon: <DeleteOutlineOutlined />,
+    label: 'Deletar',
+  },
+};
 
 export const Edit: Story = {
   args: {
@@ -62,6 +83,7 @@ export const Edit: Story = {
     label: 'Editar',
   },
 };
+
 export const Archive: Story = {
   args: {
     icon: <ShortTextOutlined />,
