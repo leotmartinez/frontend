@@ -6,6 +6,7 @@ import { expect, userEvent, within } from '@storybook/test';
 const meta = {
   title: 'Components/Pages/AskAssistantPage',
   component: AskAssistantPage,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

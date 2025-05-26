@@ -1,79 +1,108 @@
-// src/components/pages/AssistantLayout.tsx
 import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import AppNavbar from './components/AppNavbar';
-import SideMenu from './components/SideMenu';
+import Box from '../../atoms/Box/Box';
 import AppTheme from '../../shared-theme/AppTheme';
-import { AskAssistantPage } from '../AskAssistantPage'; // Importando a página principal
+import { AskAssistantPage } from '../AskAssistantPage';
+import AppNavbar from '../../organisms/AppNavbarOrganism';
 
 export default function AssistantLayout(props: { disableCustomTheme?: boolean }) {
   return (
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
-      <Box sx={{ display: 'flex' }}>
-        <SideMenu />
-        <AppNavbar />
-        {/* Main content */}
-        <Box
-          component="main"
-          sx={(theme) => ({
-            flexGrow: 1,
-            backgroundColor: theme.vars
-              ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
-              : theme.palette.background.default,
-            overflow: 'auto',
-          })}
-        >
-          <Box
-            sx={{
-              width: '100%',
-              maxWidth: '1000px', // você pode aumentar esse valor se quiser mais largo ainda
-              margin: '0 auto',
-              px: 3,
-              py: 5,
-            }}
-          >
-            <AskAssistantPage />
-          </Box>
+      
 
+      <Box
+        component="main"
+        sx={(theme) => ({
+          flexGrow: 1,
+          backgroundColor: theme.vars
+            ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
+            : theme.palette.background.default,
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+        })}
+      >
+        <Box
+          sx={{
+            width: '100%',
+            maxWidth: '1000px',
+            margin: '0 auto',
+            px: 3,
+            py: 5,
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <AskAssistantPage />
         </Box>
       </Box>
     </AppTheme>
   );
 }
 
+// // src/templates/AssistantLayout.tsx 
+
+// import CssBaseline from '@mui/material/CssBaseline'; // ok deixar direto do MUI
+// import AppTheme from '../../shared-theme/AppTheme';
+
+// import Box from '../../atoms/Box/Box';
+// import SideMenuOrganism from '../../organisms/SideMenu';
+// import AppNavbarOrganism from '../../organisms/AppNavbarOrganism';
+// import { AskAssistantPage } from '../AskAssistantPage';
+
+// export default function AssistantLayout(props: { disableCustomTheme?: boolean }) {
+//   return (
+//     <AppTheme {...props}>
+//       <CssBaseline enableColorScheme />
+      
+//       <Box sx={{ display: 'flex' }}>
+//         {/* SideMenu: aparece só no desktop */}
+//         <SideMenuOrganism />
+
+//         {/* AppNavbar: aparece só no mobile */}
+//         <AppNavbarOrganism />
+
+//         {/* Conteúdo principal */}
+//         <Box
+//           component="main"
+//           sx={(theme) => ({
+//             flexGrow: 1,
+//             backgroundColor: theme.vars
+//               ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
+//               : theme.palette.background.default,
+//             overflow: 'auto',
+//           })}
+//         >
+//           <Box
+//             sx={{
+//               width: '100%',
+//               maxWidth: '1000px',
+//               margin: '0 auto',
+//               px: 3,
+//               py: 5,
+//             }}
+//           >
+//             <AskAssistantPage />
+//           </Box>
+//         </Box>
+//       </Box>
+//     </AppTheme>
+//   );
+// }
 
 
-// import type {} from '@mui/x-date-pickers/themeAugmentation';
-// import type {} from '@mui/x-charts/themeAugmentation';
-// import type {} from '@mui/x-data-grid-pro/themeAugmentation';
-// import type {} from '@mui/x-tree-view/themeAugmentation';
-// import { alpha } from '@mui/material/styles';
+// // src/components/pages/AssistantLayout.tsx
 // import CssBaseline from '@mui/material/CssBaseline';
 // import Box from '@mui/material/Box';
-// import Stack from '@mui/material/Stack';
 // import AppNavbar from './components/AppNavbar';
-// import Header from './components/Header';
-// import MainGrid from './components/MainGrid';
 // import SideMenu from './components/SideMenu';
 // import AppTheme from '../../shared-theme/AppTheme';
-// import {
-//   chartsCustomizations,
-//   dataGridCustomizations,
-//   datePickersCustomizations,
-//   treeViewCustomizations,
-// } from './custom';
+// import { AskAssistantPage } from '../AskAssistantPage'; // Importando a página principal
 
-// const xThemeComponents = {
-//   ...chartsCustomizations,
-//   ...dataGridCustomizations,
-//   ...datePickersCustomizations,
-//   ...treeViewCustomizations,
-// };
-
-// export default function Dashboard(props: { disableCustomTheme?: boolean }) {
+// export default function AssistantLayout(props: { disableCustomTheme?: boolean }) {
 //   return (
-//     <AppTheme {...props} themeComponents={xThemeComponents}>
+//     <AppTheme {...props}>
 //       <CssBaseline enableColorScheme />
 //       <Box sx={{ display: 'flex' }}>
 //         <SideMenu />
@@ -85,24 +114,27 @@ export default function AssistantLayout(props: { disableCustomTheme?: boolean })
 //             flexGrow: 1,
 //             backgroundColor: theme.vars
 //               ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
-//               : alpha(theme.palette.background.default, 1),
+//               : theme.palette.background.default,
 //             overflow: 'auto',
 //           })}
 //         >
-//           <Stack
-//             spacing={2}
+//           <Box
 //             sx={{
-//               alignItems: 'center',
-//               mx: 3,
-//               pb: 5,
-//               mt: { xs: 8, md: 0 },
+//               width: '100%',
+//               maxWidth: '1000px', // você pode aumentar esse valor se quiser mais largo ainda
+//               margin: '0 auto',
+//               px: 3,
+//               py: 5,
 //             }}
 //           >
-//             <Header />
-//             <MainGrid />
-//           </Stack>
+//             <AskAssistantPage />
+//           </Box>
+
 //         </Box>
 //       </Box>
 //     </AppTheme>
 //   );
 // }
+
+
+

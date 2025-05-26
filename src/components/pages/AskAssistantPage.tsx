@@ -7,6 +7,7 @@ import {
   CircularProgress,
   Paper,
 } from '@mui/material';
+import MessageList from '../organisms/MessageList';
 import '../../stories/page.css';
 
 
@@ -86,7 +87,9 @@ export const AskAssistantPage: React.FC = () => {
           gap={2}
           bgcolor="#f5f5f5"
         >
-          {messages.map((msg, idx) => (
+          <MessageList messages={messages} />
+
+          {/* {messages.map((msg, idx) => (
             <Box
               key={idx}
               alignSelf={msg.sender === 'user' ? 'flex-end' : 'flex-start'}
@@ -105,7 +108,7 @@ export const AskAssistantPage: React.FC = () => {
               </Paper>
             </Box>
           ))}
-          <div ref={messagesEndRef} />
+          <div ref={messagesEndRef} /> */}
         </Box>
 
         {/* Campo de input fixo abaixo */}
