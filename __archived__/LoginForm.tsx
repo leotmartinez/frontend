@@ -1,6 +1,6 @@
 import { Box, Button, Typography, Link } from '@mui/material';
-import TextFieldWithLabel from '../molecules/TextFieldWithLabel';
-import SocialLoginButton from '../molecules/SocialLoginButton';
+import TextFieldWithLabel from './TextFieldWithLabel';
+import SocialLoginButton from './SocialLoginButton';
 
 export default function LoginForm() {
   return (

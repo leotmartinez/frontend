@@ -4,7 +4,7 @@ import { Box, CssBaseline } from '@mui/material';
 import AppNavbar from '../pages/AssistantLayout/components/AppNavbar';
 import SideMenu from '../pages/AssistantLayout/components/SideMenu';
 import MainContentWrapper from './MainContentWrapper';
-import AppTheme from '../shared-theme/AppTheme';
+import AppTheme from '../../src/components/shared-theme/AppTheme';
 
 interface AssistantLayoutTemplateProps {
   children: React.ReactNode;

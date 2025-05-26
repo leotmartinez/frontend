@@ -2,10 +2,10 @@
 import { AppBar, Box, Stack, styled } from '@mui/material';
 import MuiToolbar from '@mui/material/Toolbar';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import ColorModeIconDropdown from '../shared-theme/ColorModeIconDropdown';
-import NavbarHeader from '../molecules/NavbarHeader';
-import MenuButton from '../pages/AssistantLayout/components/MenuButton';
-import SideMenuMobile from '../pages/AssistantLayout/components/SideMenuMobile';
+import ColorModeIconDropdown from '../src/components/shared-theme/ColorModeIconDropdown';
+import NavbarHeader from './NavbarHeader';
+import MenuButton from '../src/components/pages/AssistantLayout/components/MenuButton';
+import SideMenuMobile from '../src/components/pages/AssistantLayout/components/SideMenuMobile';
 import { useState } from 'react';
 
 const Toolbar = styled(MuiToolbar)({

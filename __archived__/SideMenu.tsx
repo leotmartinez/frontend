@@ -3,10 +3,10 @@ import { styled } from '@mui/material/styles';
 import MuiDrawer, { drawerClasses } from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import SelectContent from '../molecules/SelectContent';
-import MenuContent from '../molecules/MenuContent';
-import CardAlert from '../molecules/CardAlert';
-import AvatarSection from '../molecules/AvatarSection';
+import SelectContent from './SelectContent';
+import MenuContent from './MenuContent';
+import CardAlert from './CardAlert';
+import AvatarSection from './AvatarSection';
 
 const drawerWidth = 240;
 

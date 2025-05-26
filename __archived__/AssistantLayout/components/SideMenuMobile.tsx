@@ -7,8 +7,8 @@ import Typography from '@mui/material/Typography';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import MenuButton from './MenuButton';
-import MenuContent from '../../../molecules/MenuContent';
-import CardAlert from '../../../molecules/CardAlert';
+import MenuContent from '../../../../../__archived__/MenuContent';
+import CardAlert from '../../../../../__archived__/CardAlert';
 
 interface SideMenuMobileProps {
   open: boolean | undefined;

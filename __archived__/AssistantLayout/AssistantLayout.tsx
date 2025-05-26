@@ -1,45 +1,45 @@
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '../../atoms/Box/Box';
-import AppTheme from '../../shared-theme/AppTheme';
-import { AskAssistantPage } from '../AskAssistantPage';
-import AppNavbar from '../../organisms/AppNavbarOrganism';
+// import CssBaseline from '@mui/material/CssBaseline';
+// import Box from '../../atoms/Box/Box';
+// import AppTheme from '../../shared-theme/AppTheme';
+// import { AskAssistantPage } from '../AskAssistantPage';
+// import AppNavbar from '../../../../__archived__/AppNavbarOrganism';
 
-export default function AssistantLayout(props: { disableCustomTheme?: boolean }) {
-  return (
-    <AppTheme {...props}>
-      <CssBaseline enableColorScheme />
+// export default function AssistantLayout(props: { disableCustomTheme?: boolean }) {
+//   return (
+//     <AppTheme {...props}>
+//       <CssBaseline enableColorScheme />
       
 
-      <Box
-        component="main"
-        sx={(theme) => ({
-          flexGrow: 1,
-          backgroundColor: theme.vars
-            ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
-            : theme.palette.background.default,
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-        })}
-      >
-        <Box
-          sx={{
-            width: '100%',
-            maxWidth: '1000px',
-            margin: '0 auto',
-            px: 3,
-            py: 5,
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          <AskAssistantPage />
-        </Box>
-      </Box>
-    </AppTheme>
-  );
-}
+//       <Box
+//         component="main"
+//         sx={(theme) => ({
+//           flexGrow: 1,
+//           backgroundColor: theme.vars
+//             ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
+//             : theme.palette.background.default,
+//           minHeight: '100vh',
+//           display: 'flex',
+//           flexDirection: 'column',
+//         })}
+//       >
+//         <Box
+//           sx={{
+//             width: '100%',
+//             maxWidth: '1000px',
+//             margin: '0 auto',
+//             px: 3,
+//             py: 5,
+//             flex: 1,
+//             display: 'flex',
+//             flexDirection: 'column',
+//           }}
+//         >
+//           <AskAssistantPage />
+//         </Box>
+//       </Box>
+//     </AppTheme>
+//   );
+// }
 
 // // src/templates/AssistantLayout.tsx 
 

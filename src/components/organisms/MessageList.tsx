@@ -1,6 +1,6 @@
 // src/components/organisms/MessageList.tsx
 import React, { useEffect, useRef } from 'react';
-import { Box } from '@mui/material';
+import Box from '../atoms/Box';
 import MessageBubble from '../molecules/MessageBubble';
 import type { MessageBubbleProps } from '../molecules/MessageBubble';
 

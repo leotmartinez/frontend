@@ -1,6 +1,6 @@
 // src/components/molecules/AvatarSection.tsx
 import { Avatar, Box, Stack, Typography } from '@mui/material';
-import OptionsMenu from '../pages/AssistantLayout/components/OptionsMenu'; // ou onde estiver
+import OptionsMenu from '../src/components/pages/AssistantLayout/components/OptionsMenu'; // ou onde estiver
 
 export default function AvatarSection() {
   return (

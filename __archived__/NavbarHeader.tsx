@@ -1,6 +1,6 @@
 // src/components/molecules/NavbarHeader.tsx
 import { Stack, Typography } from '@mui/material';
-import CustomIcon from '../atoms/CustomIcon';
+import CustomIcon from './CustomIcon';
 
 export default function NavbarHeader() {
   return (

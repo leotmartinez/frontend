@@ -23,5 +23,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "__archived__/SideMenu.tsx", "__archived__/LoginForm.stories.tsx", "__archived__/LoginForm.tsx", "__archived__/AppNavbarOrganism.stories.tsx", "__archived__/AppNavbarOrganism.tsx", "__archived__/SideMenu.stories.tsx", "__archived__/AvatarSection.stories.tsx", "__archived__/AvatarSection.tsx", "__archived__/CardAlert.tsx", "__archived__/MenuContent.tsx", "__archived__/SocialLoginButton.tsx", "__archived__/SelectContent.tsx", "__archived__/NavbarHeader.tsx", "__archived__/NavbarHeader.stories.tsx", "__archived__/SignIn.stories.tsx", "__archived__/SignIn.tsx", "__archived__/templates", "__archived__/ForgotPassword.tsx", "__archived__/CustomIcons.tsx", "__archived__/CustomIcon.tsx", "__archived__/stories", "__archived__/TextFieldWithLabel.stories.tsx", "__archived__/TextFieldWithLabel.tsx", "__archived__/Container.stories.tsx", "__archived__/Container.tsx", "__archived__/List.stories.tsx", "__archived__/List.tsx"]
 }
