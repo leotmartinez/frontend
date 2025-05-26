@@ -13,10 +13,10 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
-import ForgotPassword from '../ForgotPassword';
-import AppTheme from '../shared-theme/AppTheme';
-import ColorModeSelect from '../shared-theme/ColorModeSelect';
-import { GoogleIcon, FacebookIcon } from '../CustomIcons';
+import ForgotPassword from './ForgotPassword';
+import AppTheme from '../src/components/shared-theme/AppTheme';
+import ColorModeSelect from '../src/components/shared-theme/ColorModeSelect';
+import { GoogleIcon, FacebookIcon } from './CustomIcons';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
