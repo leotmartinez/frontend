@@ -48,7 +48,7 @@ const meta: Meta<typeof IconButtonAtom> = {
     },
     iconColor: {
       control: { type: 'select' },  // Controlador para selecionar cor do ícone
-      options: ['primary.50', 'softBlue.200', 'darkBlue.500', 'common.white'], // Apenas cores permitidas
+      options: ['primary.50', 'softBlue.200', 'darkBlue.500'], // Apenas cores permitidas
       description: 'Cor do ícone. Aceita valores específicos do tema.',
     },
     type: {

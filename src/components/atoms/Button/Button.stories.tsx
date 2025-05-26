@@ -5,14 +5,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 // Importa o componente Button que será documentado/testado
 import Button from './Button';
 // Importa ícones do Material UI para usar como exemplos nos botões
-import SendIcon from '@mui/icons-material/Send';
-import SaveIcon from '@mui/icons-material/Save';
+import {Send as SendOutlined, Save as SaveOutlined } from '@mui/icons-material';
+// Importa o componente Button do Material UI
 
 // Define as opções de ícones que podem ser usadas como startIcon ou endIcon
 const iconOptions = {
   Nenhum: null,
-  Enviar: <SendIcon />,
-  Salvar: <SaveIcon />,
+  Enviar: <SendOutlined />,
+  Salvar: <SaveOutlined />,
 };
 
 // Define as configurações principais da story do Button
@@ -29,11 +29,23 @@ const meta: Meta<typeof Button> = {
     type: 'button',
     startIcon: null,
     endIcon: null,
+  
   },
   argTypes: { // Define controles para manipular as props no Storybook
     color: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'error', 'info', 'success', 'warning', 'inherit'],
+      options: [
+        'primary',
+        'secondary',
+        'softBlue', // cor customizada
+        'darkBlue', // cor customizada
+        'error',
+        'info',
+        'success',
+        'warning',
+        'inherit',
+      ],
+      description: 'Cor principal do botão conforme o tema MUI. Agora inclui cores customizadas softBlue e darkBlue.',
     },
     variant: {
       control: { type: 'select' },
@@ -59,8 +71,8 @@ const meta: Meta<typeof Button> = {
       mapping: iconOptions,
       labels: {
         Nenhum: 'Nenhum',
-        Enviar: '<SendIcon />',
-        Salvar: '<SaveIcon />',
+        Enviar: '<SendOutlined />',
+        Salvar: '<SaveOutlined />',
       },
     },
     endIcon: {
@@ -69,8 +81,8 @@ const meta: Meta<typeof Button> = {
       mapping: iconOptions,
       labels: {
         Nenhum: 'Nenhum',
-        Enviar: '<SendIcon />',
-        Salvar: '<SaveIcon />',
+        Enviar: '<SendOutlined />',
+        Salvar: '<SaveOutlined />',
       },
     },
   },
