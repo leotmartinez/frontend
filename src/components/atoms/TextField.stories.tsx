@@ -5,7 +5,7 @@ import {Send as SendOutlined } from '@mui/icons-material';
 
 const iconOptions = {
   Nenhum: null,
-  Enviar: <SendOutlined />,
+  Enviar: <SendOutlined sx={{ color: 'inherit' }} />, // Ícone de envio
 };
 
 const meta: Meta<typeof TextField> = {
