@@ -1,4 +1,4 @@
-// Importa os tipos necessários do Storybook
+// Importa os tipos necessários do Storybook para tipagem das stories
 import type { Meta } from '@storybook/react';
 import type { StoryObj } from '@storybook/react';
 // Importa o componente a ser documentado/testado
@@ -10,8 +10,10 @@ import {
   ShortTextOutlined, 
   ThumbUpOutlined, 
   ThumbDownOutlined, 
-  DeleteOutlineOutlined 
+  DeleteOutlineOutlined,
+  SaveAltOutlined,
 } from '@mui/icons-material';
+import { Send } from '@mui/icons-material';
 
 // Define as configurações principais do Storybook para o componente
 const meta: Meta<typeof IconButtonAtom> = {
@@ -19,13 +21,12 @@ const meta: Meta<typeof IconButtonAtom> = {
   component: IconButtonAtom,            // Componente a ser exibido
   tags: ['autodocs'],                   // Tags para documentação automática
   args: {
-    icon: <AddOutlined />,               // Ícone padrão
-    label: 'Adicionar',                  // Label padrão
+    icon: <AddOutlined />,               // Ícone padrão exibido no botão
+    label: 'Adicionar',                  // Label padrão (tooltip e aria-label)
     color: 'primary',                    // Cor do botão padrão
-    size: 'medium',                      // Tamanho padrão
-    disabled: false,                     // Habilitado por padrão
-    type: 'button',                      // Tipo HTML padrão
-    iconColor: 'common.white',           // Cor padrão do ícone
+    size: 'medium',                      // Tamanho padrão do botão
+    disabled: false,                     // Botão habilitado por padrão
+    type: 'button',                      // Tipo HTML padrão do botão
   },
   argTypes: {
     color: {
@@ -46,11 +47,6 @@ const meta: Meta<typeof IconButtonAtom> = {
       control: 'text',
       description: 'Texto descritivo do botão (importante para acessibilidade).',
     },
-    iconColor: {
-      control: { type: 'select' },  // Controlador para selecionar cor do ícone
-      options: ['primary.50', 'softBlue.200', 'darkBlue.500'], // Apenas cores permitidas
-      description: 'Cor do ícone. Aceita valores específicos do tema.',
-    },
     type: {
       control: { type: 'select' },
       options: ['button', 'submit', 'reset'],
@@ -65,42 +61,56 @@ type Story = StoryObj<typeof IconButtonAtom>;
 // Exemplos de uso do componente com diferentes ícones e labels
 export const Add: Story = {
   args: {
-    icon: <AddOutlined />,
-    label: 'Adicionar',
+    icon: <AddOutlined />,   // Ícone de adicionar
+    label: 'Adicionar',      // Tooltip e aria-label
   },
 };
 
 export const Delete: Story = {
   args: {
-    icon: <DeleteOutlineOutlined />,
+    icon: <DeleteOutlineOutlined />, // Ícone de deletar
     label: 'Deletar',
   },
 };
 
 export const Edit: Story = {
   args: {
-    icon: <ModeEditOutlineOutlined />,
+    icon: <ModeEditOutlineOutlined />, // Ícone de editar
     label: 'Editar',
   },
 };
 
 export const Archive: Story = {
   args: {
-    icon: <ShortTextOutlined />,
+    icon: <ShortTextOutlined />, // Ícone de arquivar
     label: 'Arquivo',
   },
 };
 
 export const Like: Story = {
   args: {
-    icon: <ThumbUpOutlined />,
+    icon: <ThumbUpOutlined />, // Ícone de curtir
     label: 'Curtir',
   },
 };
 
 export const Dislike: Story = {
   args: {
-    icon: <ThumbDownOutlined />,
+    icon: <ThumbDownOutlined />, // Ícone de descurtir
     label: 'Descurtir',
+  },
+};
+
+export const SendIcon: Story = {
+  args: {
+    icon: <Send />, // Ícone de enviar
+    label: 'Enviar',
+  },
+};
+
+export const Save: Story = {
+  args: {
+    icon: <SaveAltOutlined />, // Ícone de salvar
+    label: 'Salvar',
   },
 };

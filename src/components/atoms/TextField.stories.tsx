@@ -3,8 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import TextField from './TextField';
 import {Send as SendOutlined } from '@mui/icons-material';
 
-const iconOptions = {
-  Nenhum: null,
+const icon = {
   Enviar: <SendOutlined sx={{ color: 'inherit' }} />, // Ícone de envio
 };
 
@@ -38,8 +37,6 @@ const meta: Meta<typeof TextField> = {
       options: [
         'primary',
         'secondary',
-        'softBlue', // cor customizada
-        'darkBlue', // cor customizada
         'error',
         'info',
         'success',
@@ -50,8 +47,8 @@ const meta: Meta<typeof TextField> = {
     },
     endIcon: {
       control: { type: 'select' },
-      options: Object.keys(iconOptions),
-      mapping: iconOptions,
+      options: Object.keys(icon),
+      mapping: icon,
       description: 'Ícone a ser exibido no final do campo de texto.',
     },
     type: {

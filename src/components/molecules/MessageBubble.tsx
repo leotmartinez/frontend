@@ -17,8 +17,8 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ sender, text }) => {
         elevation={1}
         sx={{
           p: 1.5,
-          bgcolor: isUser ? '#1976d2' : '#e0e0e0',
-          color: isUser ? 'white' : 'black',
+          bgcolor: isUser ? '#E5F2FF' : 'white',
+          color: isUser ? '#333840' : '#333840',
           borderRadius: 2,
         }}
       >

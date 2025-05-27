@@ -16,7 +16,6 @@ declare module '@mui/material/TextField' {
 // Usamos type ao invés de interface para evitar problemas de extensão
 export type CustomTextFieldProps = TextFieldProps & {
   endIcon?: React.ReactNode;
-  sx?: TextFieldProps['sx']; // garante tipagem para sx
 };
 
 /**
@@ -32,7 +31,6 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
   endIcon,
   slotProps,
   color = 'primary', // valor padrão para color
-  sx,
   ...props
 }) => {
   // Se endIcon for um ReactElement, aplica sx dinâmico para cor do contorno
@@ -65,7 +63,7 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
         '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
           borderColor: (theme) => theme.palette[color]?.main || theme.palette.primary.main,
         },
-        ...sx,
+      
       }}
       slotProps={{
         ...slotProps,
