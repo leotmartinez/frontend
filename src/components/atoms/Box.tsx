@@ -1,4 +1,4 @@
-// src/components/atoms/Box/Box.tsx
+// src/components/atoms/Box.tsx
 import React from 'react';
 import MuiBox from '@mui/material/Box';
 import type { BoxProps as MuiBoxProps } from '@mui/material/Box';

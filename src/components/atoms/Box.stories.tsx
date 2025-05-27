@@ -1,4 +1,4 @@
-// src/components/atoms/Box/Box.stories.tsx
+// src/components/atoms/Box.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
 import Box from './Box';
 

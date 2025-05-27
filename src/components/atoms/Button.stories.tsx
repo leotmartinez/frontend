@@ -1,4 +1,4 @@
-// src/components/atoms/Button/Button.stories.tsx
+// src/components/atoms/Button.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 import SendIcon from '@mui/icons-material/Send';
